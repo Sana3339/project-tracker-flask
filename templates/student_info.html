@@ -16,10 +16,10 @@
             {% for project in projects %}
 
               <form action="/project">
-                  <input type="hidden" name="project_title" value="{{ project[0] }}">
+                  <input type="hidden" name="title" value="{{ project[0] }}">
               </form>
 
-              <li>Title: <a href="/project?project_title={{ project[0] }}">{{ project[0] }},</a>
+              <li>Title: <a href="/project?title={{ project[0] }}">{{ project[0] }},</a>
                 Grade: {{ project[1] }}</li>
 
             {% endfor %}

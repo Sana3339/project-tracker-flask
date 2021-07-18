@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Project Tracker</title>
+  </head>
+
+  <body>
+
+    <form action="/api/create-project" method="POST">
+      <p>
+        <label>Project Name:
+          <input type="text" name="title">
+        </label>
+      </p>
+      <p>
+        <label>Description:
+          <input type="text" name="description">
+        </label>
+      </p>
+      <p>
+        <label>Max Grade:
+          <input type="text" name="max_grade">
+        </label>
+      </p>
+        <input type="submit" value="Create Project">
+     </form>
+
+  </body>
+</html>
