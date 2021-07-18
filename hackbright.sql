@@ -30,7 +30,7 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- Name: grades; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: grades; Type: TABLE; Schema: public; Owner: -; Tablespace:
 --
 
 CREATE TABLE grades (
@@ -61,7 +61,7 @@ ALTER SEQUENCE grades_id_seq OWNED BY grades.id;
 
 
 --
--- Name: projects; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: projects; Type: TABLE; Schema: public; Owner: -; Tablespace:
 --
 
 CREATE TABLE projects (
@@ -92,7 +92,7 @@ ALTER SEQUENCE projects_id_seq OWNED BY projects.id;
 
 
 --
--- Name: students; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: students; Type: TABLE; Schema: public; Owner: -; Tablespace:
 --
 
 CREATE TABLE students (
@@ -198,14 +198,14 @@ SELECT pg_catalog.setval('students_id_seq', 2, true);
 
 
 --
--- Name: students_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+-- Name: students_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace:
 --
 
 ALTER TABLE ONLY students
 	ADD CONSTRAINT students_pkey PRIMARY KEY (id);
 
 --
--- Name: grades_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+-- Name: grades_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace:
 --
 
 ALTER TABLE ONLY grades
@@ -213,7 +213,7 @@ ALTER TABLE ONLY grades
 
 
 --
--- Name: projects_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+-- Name: projects_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace:
 --
 
 ALTER TABLE ONLY projects
@@ -231,4 +231,3 @@ GRANT ALL ON SCHEMA public TO PUBLIC;
 --
 -- PostgreSQL database dump complete
 --
-

@@ -71,6 +71,18 @@ def show_project_details():
                                                     student_grades=student_grades))
 
 
+@app.route("/homepage")
+def show_homepage():
+    """Display homepage which lists all students and all projects."""
+
+    students = hackbright.get_all_students()
+
+    projects = hackbright.get_all_projects()
+
+    return(render_template("homepage.html", students=students,
+                                            projects=projects))
+
+
 if __name__ == "__main__":
     hackbright.connect_to_db(app)
     app.run(debug=True, host="0.0.0.0")

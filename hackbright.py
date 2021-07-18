@@ -37,6 +37,20 @@ def get_student_by_github(github):
 
     return row
 
+def get_all_students():
+    """Return info about all students in the database."""
+
+    QUERY = """
+        SELECT first_name, last_name, github
+        FROM students
+    """
+
+    db_cursor = db.session.execute(QUERY)
+
+    rows = db_cursor.fetchall()
+
+    return rows
+
 
 def make_new_student(first_name, last_name, github):
     """Add a new student and print confirmation.
@@ -74,6 +88,20 @@ def get_project_by_title(title):
     print(f"Title: {row[0]}\nDescription: {row[1]}\nMax Grade: {row[2]}")
 
     return row
+
+def get_all_projects():
+    """Return info for all projects in database."""
+
+    QUERY = """
+            SELECT title, description
+            FROM projects
+    """
+
+    db_cursor = db.session.execute(QUERY)
+
+    rows = db_cursor.fetchall()
+
+    return rows
 
 
 def get_grade_by_github_title(github, title):
