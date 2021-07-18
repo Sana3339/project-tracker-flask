@@ -138,6 +138,7 @@ def get_grade_by_github_title(github, title):
 
     print(f"Student {github} in project {title} received grade of {row[0]}")
 
+
     return row
 
 
@@ -156,6 +157,23 @@ def assign_grade(github, title, grade):
     db.session.commit()
 
     print(f"Successfully assigned grade of {grade} for {github} in {title}")
+
+
+def delete_grade(github, title):
+    """Delete a student grade for a particular project."""
+
+    QUERY = """
+        DELETE FROM grades
+        WHERE student_github = :github
+          AND project_title = :title
+        """
+
+    db.session.execute(QUERY, {'github': github,
+                                'title': title})
+
+    db.session.commit()
+
+    print(f"Successfully deleted grade for {github} for {title}")
 
 
 def get_grades_by_github(github):

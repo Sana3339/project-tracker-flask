@@ -4,6 +4,8 @@
 
 {% block content %}
 
+  <h1>Add Project</h1>
+
     <form action="/api/create-project" method="POST">
       <p>
         <label>Project Name:
@@ -11,9 +13,8 @@
         </label>
       </p>
       <p>
-        <label>Description:
-          <input type="text" name="description">
-        </label>
+        <label>Description:</label>
+          <textarea name="description"></textarea>
       </p>
       <p>
         <label>Max Grade:

@@ -73,6 +73,27 @@ def create_project():
 
     return render_template("project_confirmation.html", title=title)
 
+@app.route("/assign-grade")
+def show_assign_grade_form():
+    """Displays form to assign a grade to a student."""
+
+    return render_template("assign_grade_form.html")
+
+@app.route("/api/assign-grade", methods=["POST"])
+def assign_grade():
+    """Get values from form and save assigned grade for student in database."""
+
+    github = request.form.get('github')
+    title = request.form.get('title')
+    grade = request.form.get('grade')
+
+    hackbright.delete_grade(github, title)
+
+    hackbright.assign_grade(github, title, grade)
+
+    return render_template("grade_confirmation.html", github=github)
+
+
 @app.route("/project")
 def show_project_details():
     """Show details of a project along with students and their grades

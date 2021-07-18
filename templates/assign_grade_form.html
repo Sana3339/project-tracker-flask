@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %} Project Tracker {% endblock %}
+
+{% block content %}
+
+    <h1>Assign Grade</h1>
+
+    <form action="/api/assign-grade" method="POST">
+
+           <label>Choose the student to assign grade to:</label>
+
+            <select name="github">
+              <option value="sdevelops">sdevelops</option>
+              <option value="jhacks">jhacks</option>
+            </select>
+
+        <p>
+            <label>Choose project:</label>
+            <select name="title">
+                <option value="Markov">Markov</option>
+                <option value="Blockly">Blockly</option>
+                <option value="Wits and Wagers ">Wits and Wagers</option>
+              </select>
+        </p>
+        <p>
+            <label>Grade:
+                <input type="text" name="grade">
+            </label>
+        </p>
+            <input type="submit" value="Assign Grade">
+    </form>
+
+{% endblock %}
